@@ -1,0 +1,205 @@
+/* Theme CSS Variables */
+:root {
+  --color-primary: #ff8c00;
+  --color-primary-light: #ffa500;
+  --color-primary-dark: #ff6b00;
+  --color-secondary: #1e2235;
+  --color-background: #0f1218;
+  --color-background-light: #1a1e2e;
+  --color-text: #ffffff;
+  --color-text-secondary: #a0aec0;
+  --color-border: #2d3748;
+  --color-success: #48bb78;
+  --color-warning: #ecc94b;
+  --color-danger: #f56565;
+  --color-info: #4299e1;
+
+  /* Consistent background gradient */
+  --bg-gradient: linear-gradient(135deg, #0f1218, #1a1e2e);
+  --primary-gradient: linear-gradient(135deg, #ff6d00, #ffa726);
+}
+
+/* Gradient Backgrounds */
+.bg-gradient-primary {
+  background: var(--primary-gradient);
+}
+
+.bg-app {
+  background: var(--bg-gradient);
+}
+
+/* Glow Effects */
+.glow-card {
+  box-shadow: 0 0 15px rgba(255, 140, 0, 0.3);
+}
+
+.glow-text {
+  text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(255, 165, 0, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(255, 165, 0, 0.7));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(255, 165, 0, 0.5));
+  }
+}
+
+.animate-glow {
+  animation: pulse-glow 3s infinite;
+}
+
+.logo-circle {
+  filter: drop-shadow(0 0 8px rgba(255, 140, 0, 0.6));
+}
+
+@keyframes subtle-glow {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 109, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 109, 0, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 109, 0, 0.2);
+  }
+}
+
+.animate-glow-subtle {
+  animation: subtle-glow 4s ease-in-out infinite;
+}
+
+@keyframes pulse-glow-small {
+  0% {
+    filter: drop-shadow(0 0 3px rgba(255, 109, 0, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 6px rgba(255, 109, 0, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 3px rgba(255, 109, 0, 0.5));
+  }
+}
+
+.animate-glow-pulse {
+  animation: pulse-glow-small 2s ease-in-out infinite;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+/* Buttons */
+button:focus,
+a:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.3);
+}
+
+/* Form Elements */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.3);
+}
+
+/* Card Styles */
+.card {
+  background-color: var(--color-secondary);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Footer Styles */
+.footer {
+  background-color: var(--color-background);
+  border-top: 1px solid var(--color-border);
+}
+
+/* Page Layout */
+.page-container {
+  padding-top: 7rem; /* Increased padding to ensure content is not covered by navbar */
+  min-height: calc(100vh - 4rem); /* Full height minus navbar */
+}
+
+/* Responsive Utilities */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .page-container {
+    padding-top: 6.5rem; /* Increased padding on mobile but still less than desktop */
+  }
+}
+
+/* Dark Mode Overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
