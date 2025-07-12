@@ -47,3 +47,6 @@ lerna-debug.log*
 .env 
 .env.example
 node_modules
+
+.yml
+Chlo_Ride_Sharing_Appendices.md
