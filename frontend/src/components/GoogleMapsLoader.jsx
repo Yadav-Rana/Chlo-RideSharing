@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 
 // Google Maps API key
-const API_KEY = "AIzaSyDDQNyvN8tT2JpnZNrbWIxIiEt6B43ZDaw";
+const API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
 // Define all libraries we need
 // Note: 'directions' is not a separate library, it's part of the core API

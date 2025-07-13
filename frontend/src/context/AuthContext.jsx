@@ -31,10 +31,9 @@ export const AuthProvider = ({children}) => {
   // Register user
   const register = async (userData) => {
     try {
-      const response = await axios.post(
-        "http://localhost:5000/api/users",
-        userData
-      );
+      const API_URL =
+        import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+      const response = await axios.post(`${API_URL}/users`, userData);
 
       if (response.data) {
         // Ensure memberSince is properly set
@@ -59,10 +58,9 @@ export const AuthProvider = ({children}) => {
   // Login user
   const login = async (userData) => {
     try {
-      const response = await axios.post(
-        "http://localhost:5000/api/users/login",
-        userData
-      );
+      const API_URL =
+        import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+      const response = await axios.post(`${API_URL}/login`, userData);
 
       if (response.data) {
         // Ensure memberSince is properly set
@@ -99,8 +97,10 @@ export const AuthProvider = ({children}) => {
         },
       };
 
+      const API_URL =
+        import.meta.env.VITE_API_URL || "http://localhost:5000/api";
       const response = await axios.put(
-        "http://localhost:5000/api/users/profile",
+        `${API_URL}/users/profile`,
         userData,
         config
       );

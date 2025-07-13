@@ -83,7 +83,9 @@ const Profile = () => {
           },
         };
 
-        await axios.delete("http://localhost:5000/api/users/profile", config);
+        const API_URL =
+          import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+        await axios.delete(`${API_URL}/users/profile`, config);
 
         // Log the user out and redirect to home page
         logout();
